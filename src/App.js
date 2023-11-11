@@ -102,9 +102,11 @@ function App({ signOut, user }) {
     };
 
   async function generateResponse({ user, prompt }) {
+    
     try {
-      if (settings.modelId && settings.modelRegion) {
-
+      const _settings = JSON.parse(localStorage.getItem('Settings')) || {};
+      setSettings(_settings);
+      if (_settings.modelId && _settings.modelRegion) {
         const body = JSON.stringify({
           prompt: `\n\nHuman: ${prompt}\n\nAssistant:`,
           max_tokens_to_sample: 300,
@@ -115,7 +117,7 @@ function App({ signOut, user }) {
           anthropic_version: "bedrock-2023-05-31",
         });
         const params = {
-          modelId: settings.modelId,
+          modelId: _settings.modelId,
           contentType: "application/json",
           accept: "*/*",
           body: body,
