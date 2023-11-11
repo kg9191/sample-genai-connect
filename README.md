@@ -47,3 +47,9 @@ This solution uses Amazon Bedrock to run prompts provided by agent or customer o
 9. run `amplify publish`. This will create a url to access you web application.
 10. [Add web application domain to Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/app-integration.html)
 
+
+
+##### Application Snapshots
+
+![Config](config.png)
+
