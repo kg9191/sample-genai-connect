@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-samplegenaiconnect-dev-191249-authRole",
+      "UnauthRoleArn": "arn:aws:iam::117546423603:role/amplify-samplegenaiconnect-dev-191249-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::117546423603:role/amplify-samplegenaiconnect-dev-191249-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-samplegenaiconnect-dev-191249-deployment",
+      "UnauthRoleName": "amplify-samplegenaiconnect-dev-191249-unauthRole",
+      "StackName": "amplify-samplegenaiconnect-dev-191249",
+      "StackId": "arn:aws:cloudformation:us-west-2:117546423603:stack/amplify-samplegenaiconnect-dev-191249/e3e7b580-7d90-11ee-9e63-0aa87cd2f869",
+      "AmplifyAppId": "d22o0jlrn2f9gr"
+    },
+    "categories": {
+      "auth": {
+        "samplegenaiconnect6ff6bb12": {}
+      }
+    }
+  }
+}
