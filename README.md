@@ -28,7 +28,7 @@ This solution uses Amazon Bedrock to run prompts provided by agent or customer o
 7. run `amplify push`.
 8. Update Amazon Cognito Authenticated Permissions to include `bedrock:InvokeModel`.
 
-    - Navigate to Amazon Cognito User pools: https://us-east-1.console.aws.amazon.com/cognito/v2/identity/identity-pools?region=us-east-1
+    - Navigate to Amazon Cognito Identity pool: https://us-east-1.console.aws.amazon.com/cognito/v2/identity/identity-pools?region=us-east-1
     - Choose the newly created user pool
     - Select `User Access tab > Edit Role -> View IAM role`
     - Add the following permissions to role:
@@ -44,20 +44,6 @@ This solution uses Amazon Bedrock to run prompts provided by agent or customer o
    
       ```
 
-9. run `amplify publish`.
-
-- Navigate to identity pool
-- User access
-- Edit authnticated user Role
-- {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": "bedrock:InvokeModel",
-            "Resource": "*"
-        }
-    ]
-}
+9. run `amplify publish`. This will create a url to access you web application.
+10. [Add web application domain to Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/app-integration.html)
 

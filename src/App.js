@@ -50,10 +50,11 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 const initialSettings = {
-  modelRegion: 'use-east-1',
-  connectInstance: 'https://${YOUR_CONNECT_INSTANCE_NAME}.my.connect.aws',
-  connectRegion: 'us-east-1',
-  modelId: 'anthropic.claude-instant-v1'
+  modelRegion: '',
+  // connectInstance: 'https://${YOUR_CONNECT_INSTANCE_NAME}.my.connect.aws',
+  connectInstance: '',
+  connectRegion: '',
+  modelId: ''
 }
 
 const classes = {
@@ -179,7 +180,7 @@ function App({ signOut, user }) {
 
   useEffect(() => {
 
-  }, [window.connect.bedRockClient])
+  }, [window.bedRockClient])
 
   function processChat(chatEvent, suggestions) {
     const _chatEvent = JSON.parse(chatEvent.content);
@@ -202,12 +203,6 @@ function App({ signOut, user }) {
 
         window.connect.core.initCCP(containerDiv, ccpConfig);
         window.connect.core.onAuthorizeSuccess(() => {
-          window.agent.setState({ name: 'some' }, {
-            success: function () { /* ... */ },
-            failure: function (err) { /* ... */ },
-          },
-            { enqueueNextState: false }
-          );
           setCcpStarted(true);
           console.log("authorization succeeded! Hooray");
 
@@ -297,6 +292,7 @@ function App({ signOut, user }) {
                       required
                       id="modelid"
                       label="Model Id"
+                      placeholder='anthropic.claude-instant-v1'
                       helperText="https://docs.aws.amazon.com/bedrock/latest/userguide/model-ids-arns.html"
                     />
 
@@ -306,6 +302,7 @@ function App({ signOut, user }) {
                       required
                       id="modelRegion"
                       label="Model region"
+                      placeholder='us-east-1'
                       helperText=""
                     />
                     <TextField fullWidth
@@ -314,6 +311,7 @@ function App({ signOut, user }) {
                       required
                       id="connectInstance"
                       label="Connect instance"
+                      placeholder='https://${YOUR_CONNECT_INSTANCE_NAME}.my.connect.aws'
                       helperText="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-name.html"
                     />
                     <TextField fullWidth
@@ -322,6 +320,7 @@ function App({ signOut, user }) {
                       required
                       id="connectRegion"
                       label="Connect region"
+                      placeholder='us-east-1'
                       helperText=""
                     />
                   </div>
